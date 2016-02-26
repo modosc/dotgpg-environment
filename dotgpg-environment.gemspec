@@ -7,11 +7,11 @@ require "English"
 Gem::Specification.new do |spec|
   spec.name          = "dotgpg-environment"
   spec.version       = Dotgpg::Environment::VERSION
-  spec.authors       = ["Jonathan Schatz"]
-  spec.email         = ["jon@divisionbyzero.com"]
+  spec.authors       = ["jonathan schatz"]
+  spec.email         = ["modosc@users.noreply.github.com"]
 
   spec.summary       = spec.description = "dotenv parser for dotgpg files"
-  spec.homepage      = "https://github.com/vouch/dotgpg-environment"
+  spec.homepage      = "https://github.com/modosc/dotgpg-environment"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"

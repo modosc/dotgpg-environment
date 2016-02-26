@@ -1,6 +1,7 @@
 # Dotgpg::Environment
 
-monkeypatched version of dotenv's ```Environment``` class that can parse dotgpg-encrypted files.
+This gem enables you to read and write [dotgpg](https://github.com/ConradIrwin/dotgpg)-encrypted files using an interface based on [Dotenv::Environment](https://github.com/bkeepers/dotenv/blob/master/lib/dotenv/environment.rb).
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -20,7 +21,28 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-env = Dotgpg::Environment.new 'foo.gpg'
+# create a new file
+e = Dotgpg::Environment.new 'foo.gpg'
+
+# set some values
+e['FOO'] = "BAR"
+e['BAZ'] = "BAT"
+
+# save an encrypted version
+e.write
+
+# read in an existing file
+f = Dotgpg::Environment.new 'foo.gpg'
+
+# a call to #read is implicit if the provided file already exists
+f['FOO']
+# => "BAR"
+
+# set values in the current ENV
+f.apply!
+
+# set values in the current ENV but don't overwrite existing values
+f.apply
 ```
 
 ## Development
@@ -31,7 +53,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/vouch/dotgpg-environment/fork )
+1. Fork it ( https://github.com/modosc/dotgpg-environment/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

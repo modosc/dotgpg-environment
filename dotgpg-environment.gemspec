@@ -23,6 +23,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec"
 
   spec.add_dependency "dotgpg"
-  spec.add_dependency "dotenv", "~> 2.0.1"
+  spec.add_dependency "dotenv", ">= 2.0.1", "< 2.2"
 
 end

@@ -1,4 +1,4 @@
-# Dotgpg::Environment
+# Dotgpg::Environment [![Gem Version](https://badge.fury.io/rb/dotgpg-environment.svg)](https://badge.fury.io/rb/dotgpg-environment)
 
 This gem enables you to read and write [dotgpg](https://github.com/ConradIrwin/dotgpg)-encrypted files using an interface based on [Dotenv::Environment](https://github.com/bkeepers/dotenv/blob/master/lib/dotenv/environment.rb).
 
